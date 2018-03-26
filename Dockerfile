@@ -5,7 +5,6 @@ RUN set -ex \
 
 COPY ansible.cfg /etc/ansible/ansible.cfg
 COPY entrypoint.sh /entrypoint.sh
-COPY merge_config.py /usr/local/bin/
 
 ONBUILD COPY playbooks /playbooks
 ONBUILD RUN [ -f /playbooks/requirements.yml ] && ansible-galaxy install -r /playbooks/requirements.yml
